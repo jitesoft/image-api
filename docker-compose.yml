@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+
+  redis:
+    image: redis:7-alpine3.18
+    volumes:
+      - "redis_store:/data"
+    ports:
+      - "6379:6379"
+
+  rabbit:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "15672:15672" # Web
+      - "5672:5672"   # Queue
+
+  minio:
+    image: minio/minio
+    command: server /data --console-address ":9001"
+    environment:
+      - MINIO_ROOT_USER=testabc123
+      - MINIO_ROOT_PASSWORD=testabc123
+    volumes:
+      - minio:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+  # This service will run at startup and create (if not exists) a new bucket for
+  # the s3 plugin to use. It will also update the policy to use a public bucket.
+  create_buckets:
+    image: quay.io/minio/mc
+    environment:
+      - BUCKET=storage-bucket
+    restart: "no"
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc alias set minio http://minio:9000 testabc123 testabc123;
+      /usr/bin/mc mb minio/${BUCKET} --ignore-existing;
+      /usr/bin/mc policy set public minio/${BUCKET};
+      exit 0;
+      "
+
+volumes:
+  redis_store:
+    driver: local
+  rabbit_store:
+    driver: local
+  storage:
+    driver: local
