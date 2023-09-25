@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageApi", "ImageApi\ImageApi.csproj", "{A5C64992-B6DF-4DF8-B753-AA7B8CB94F43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queue", "Queue", "{E7B268A6-FD00-4B12-97AE-5D745A10D097}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.Queue", "Queue\Lib.Queue\Lib.Queue.csproj", "{B2E657AF-9E20-41F4-AAFA-25AFDFDBB90F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.Queue.Redis", "Queue\Lib.Queue.Redis\Lib.Queue.Redis.csproj", "{83802C25-6D68-4FB8-9FBF-8AA483E8271A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.Queue.Rabbit", "Queue\Lib.Queue.Rabbit\Lib.Queue.Rabbit.csproj", "{432A9704-0D1F-413E-B49A-CB60D14E657C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{EC5325E6-041E-49C6-88A8-03A5224B96C0}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
+		README.md = README.md
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5C64992-B6DF-4DF8-B753-AA7B8CB94F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C64992-B6DF-4DF8-B753-AA7B8CB94F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C64992-B6DF-4DF8-B753-AA7B8CB94F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C64992-B6DF-4DF8-B753-AA7B8CB94F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E657AF-9E20-41F4-AAFA-25AFDFDBB90F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E657AF-9E20-41F4-AAFA-25AFDFDBB90F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E657AF-9E20-41F4-AAFA-25AFDFDBB90F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E657AF-9E20-41F4-AAFA-25AFDFDBB90F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83802C25-6D68-4FB8-9FBF-8AA483E8271A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83802C25-6D68-4FB8-9FBF-8AA483E8271A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83802C25-6D68-4FB8-9FBF-8AA483E8271A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83802C25-6D68-4FB8-9FBF-8AA483E8271A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{432A9704-0D1F-413E-B49A-CB60D14E657C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{432A9704-0D1F-413E-B49A-CB60D14E657C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{432A9704-0D1F-413E-B49A-CB60D14E657C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{432A9704-0D1F-413E-B49A-CB60D14E657C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2E657AF-9E20-41F4-AAFA-25AFDFDBB90F} = {E7B268A6-FD00-4B12-97AE-5D745A10D097}
+		{83802C25-6D68-4FB8-9FBF-8AA483E8271A} = {E7B268A6-FD00-4B12-97AE-5D745A10D097}
+		{432A9704-0D1F-413E-B49A-CB60D14E657C} = {E7B268A6-FD00-4B12-97AE-5D745A10D097}
+	EndGlobalSection
+EndGlobal
